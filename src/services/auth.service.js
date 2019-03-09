@@ -1,27 +1,37 @@
-import Axios from 'axios';
+import Axios from 'axios'
 
 const AuthService = {
-  login(credentials) {
+  login (credentials) {
     return Axios.post('http://localhost:3000/auth/login', credentials)
       .then(response => {
         if (response.status === 200 || response.status === 201) {
-          const { payload } = response.data;
-          return payload;
+          const { payload } = response.data
+          return payload
         }
-      });
+      })
   },
 
-  setHeader(access_token) {
-    Axios.defaults.headers.common['Authorization'] = access_token;
+  register (newUser) {
+    return Axios.post('http://localhost:3000/auth/register', newUser)
+      .then(response => {
+        if (response.status === 200 || response.status === 201) {
+          const { payload } = response.data
+          return payload
+        }
+      })
   },
 
-  storeToken(token) {
-    localStorage.setItem('token', JSON.stringify(token));
+  setHeader (access_token) {
+    Axios.defaults.headers.common['Authorization'] = access_token
   },
 
-  storeUser(user) {
-    localStorage.setItem('user', JSON.stringify(user));
+  storeToken (token) {
+    localStorage.setItem('token', JSON.stringify(token))
   },
-};
 
-export default AuthService;
+  storeUser (user) {
+    localStorage.setItem('user', JSON.stringify(user))
+  }
+}
+
+export default AuthService

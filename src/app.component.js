@@ -6,10 +6,8 @@ export default {
     SideNavigation
   },
   computed: {
-    isLogIn() {
+    isLogIn () {
       return this.$store.getters.IS_LOGIN
     }
   },
-};
-
-
+}

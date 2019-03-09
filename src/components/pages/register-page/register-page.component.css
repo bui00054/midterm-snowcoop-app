@@ -8,6 +8,7 @@
  }
 
  .create-account-box-wrapper {
+   padding-top: 100px;
    height: 550px;
    width: 538px;
  }
@@ -85,8 +86,8 @@
  }
 
  button:disabled {
-   opacity: 0.5;
- }
+  opacity: 0.25;
+}
 
  .instruction-text-wrapper {
    font-size: 18px;
@@ -94,3 +95,9 @@
    margin-top: -13px;
    margin-bottom: 57px;
  }
+
+ .next-button-wrapper {
+  border-radius: 4px;
+  background-color: #1974e8;
+  
+}

@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-aside width="228px" v-if="isLogIn">
-        <side-navigation/>
+        <SideNavigation/>
       </el-aside>
       <el-main>
         <router-view></router-view>

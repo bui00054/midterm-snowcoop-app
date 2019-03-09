@@ -1,25 +1,25 @@
 export default {
   name: 'registerPage',
-  data() {
+  data () {
     var passwordVadlidate = (rule, value, callback) => {
       if (value === '') {
-        callback(new Error('Please input the password'));
+        callback(new Error('Please input the password'))
       } else {
-        if (this.formData.passwordConfirm !== "") {
-          this.$refs.formData.validateField("passwordConfirm");
+        if (this.formData.passwordConfirm !== '') {
+          this.$refs.formData.validateField('passwordConfirm')
         }
-        callback();
+        callback()
       }
-    };
+    }
     var confirmValidate = (rule, value, callback) => {
       if (value === '') {
-        callback(new Error('Please input the password again'));
+        callback(new Error('Please input the password again'))
       } else if (value !== this.formData.password) {
-        callback(new Error('Two inputs don\'t match!'));
+        callback(new Error('Two inputs don\'t match!'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
 
     return {
       formData: {
@@ -27,14 +27,14 @@ export default {
         lastName: null,
         email: null,
         password: null,
-        passwordConfirm: null,
+        passwordConfirm: null
       },
       rules: {
         firstName: [
-          { required: true, message: 'Please input first name', trigger: 'blur' },
+          { required: true, message: 'Please input first name', trigger: 'blur' }
         ],
         lastName: [
-          { required: true, message: 'Please input last name', trigger: 'blur' },
+          { required: true, message: 'Please input last name', trigger: 'blur' }
         ],
         email: [
           { required: true, message: 'Please input email address', trigger: 'blur' },
@@ -49,17 +49,43 @@ export default {
           { validator: confirmValidate, trigger: 'blur' }
         ]
       },
-      isFormValidated: false,
-    };
+      isFormValidated: false
+    }
   },
   methods: {
-    updateIsFormValidated() {
-      const fields = this.$refs.formData.fields;
+    updateIsFormValidated () {
+      const fields = this.$refs.formData.fields
       this.isFormValidated = fields.reduce((acc, field) => {
-        const valid = (field.isRequired && field.validateState === 'success');
-        const noError = (!field.isRequired && field.validateState !== 'error');
-        return acc && (valid || noError);
-      }, true);
+        const valid = (field.isRequired && field.validateState === 'success')
+        const noError = (!field.isRequired && field.validateState !== 'error')
+        return acc && (valid || noError)
+      }, true)
     },
+    register () {
+      if (this.isFormValidated) {
+        const newUser = {
+          firstName: this.formData.firstName,
+          lastName: this.formData.lastName,
+          email: this.formData.email,
+          password: this.formData.password
+        };
+
+        this.$store.dispatch('REGISTER', newUser).then(
+          (user) => this.onRegisterSuccessful(user),
+          (error) => this.onRegisterFailed(error)
+        );
+      }
+    },
+    onRegisterSuccessful (user) {
+      if (!user) {
+        throw new Error('Something went wrong!');
+      }
+      this.$router.push('dashboard');
+},
+
+    onRegisterFailed (error) {
+      /* eslint-disable*/
+      console.error(error)
+    }
   }
-};
+}
