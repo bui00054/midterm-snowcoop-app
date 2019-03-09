@@ -19,10 +19,6 @@ const router = new VueRouter({
       component: RegisterPage
     },
     {
-      path: '/',
-      redirect: '/dashboard',
-    },
-    {
       path: '/dashboard',
       component: DashboardPage
     },

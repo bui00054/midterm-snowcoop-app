@@ -1,4 +1,4 @@
-import SideNavigation from './components/side-navigation/side-navigation.component.vue';
+import SideNavigation from './components/side-navigation/side-navigation.component.vue'
 
 export default {
   name: 'app',
@@ -9,5 +9,5 @@ export default {
     isLogIn () {
       return this.$store.getters.IS_LOGIN
     }
-  },
+  }
 }

@@ -68,20 +68,20 @@ export default {
           lastName: this.formData.lastName,
           email: this.formData.email,
           password: this.formData.password
-        };
+        }
 
         this.$store.dispatch('REGISTER', newUser).then(
           (user) => this.onRegisterSuccessful(user),
           (error) => this.onRegisterFailed(error)
-        );
+        )
       }
     },
     onRegisterSuccessful (user) {
       if (!user) {
-        throw new Error('Something went wrong!');
+        throw new Error('Something went wrong!')
       }
-      this.$router.push('dashboard');
-},
+      this.$router.push('dashboard')
+    },
 
     onRegisterFailed (error) {
       /* eslint-disable*/
