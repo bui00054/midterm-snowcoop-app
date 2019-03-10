@@ -4,8 +4,8 @@
       <el-aside width="228px" v-if="isLogIn">
         <SideNavigation/>
       </el-aside>
-      <el-main>
-        <router-view></router-view>
+      <el-main> 
+        <router-view> </router-view>
       </el-main>
     </el-container>
   </div>

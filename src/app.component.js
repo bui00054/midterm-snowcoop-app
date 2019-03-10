@@ -8,6 +8,6 @@ export default {
   computed: {
     isLogIn () {
       return this.$store.getters.IS_LOGIN
-    }
-  }
+    },
+  },
 }
