@@ -3,7 +3,7 @@ export default {
 
 data () {
 return {
-  user: 'John'
-}
-}
+  message: this.$store.getters.USER
+  }
+ }
 }

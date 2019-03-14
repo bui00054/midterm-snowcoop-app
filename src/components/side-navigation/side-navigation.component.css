@@ -5,3 +5,8 @@
 .side-nav-menu {
   height: 100%;
 }
+.menu-itemhover {
+  width: 228px;
+  height: 84px;
+  background-color: #a4d4f6;
+}
