@@ -5,8 +5,27 @@
 .side-nav-menu {
   height: 100%;
 }
+
+.side-nav-wrapper {
+  width: 228px;
+  height: 1024px;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+}
 .menu-itemhover {
   width: 228px;
   height: 84px;
   background-color: #a4d4f6;
+}
+
+.side-nav-wrapper {
+  width: 228px;
+  height: 1024px;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+}
+
+.menu-item {
+  width: 228px;
+  height: 84px;
 }
