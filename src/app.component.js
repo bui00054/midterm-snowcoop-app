@@ -6,6 +6,7 @@ export default {
     SideNavigation
   },
   computed: {
+    /* eslint-disable */
     isLogIn () {
       return this.$store.getters.IS_LOGIN
     },
