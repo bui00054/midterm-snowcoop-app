@@ -1,22 +1,20 @@
-import mapView from "../../shared/map-view/map-view.component.vue"
-
-
+import mapView from '../../shared/map-view/map-view.component.vue';
 export default {
   name: 'listPage',
   components: {
     mapView
   },
-  data() {
+  data () {
     return {
-      addressList: null,
+      addressList: null
     }
   },
   mounted() {
     /* eslint-disable */
-    console.log('mounted...')
+    console.log('mounted...');
     this.$store.dispatch('GET_ADDRESS_LIST').then(addressList => {
+      console.log(addressList);
       this.addressList = addressList
-      console.log(addressList)
     })
   }
 };
