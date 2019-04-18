@@ -1,8 +1,8 @@
-import VueRouter from 'vue-router';
-import LoginPage from './components/pages/login-page/login-page.component.vue';
-import RegisterPage from './components/pages/register-page/register-page.component.vue';
-import DashboardPage from './components/pages/dashboard-page/dashboard-page.component.vue';
-import ListPage from './components/pages/list-page/list-page.component.vue';
+import VueRouter from 'vue-router'
+import LoginPage from './components/pages/login-page/login-page.component.vue'
+import RegisterPage from './components/pages/register-page/register-page.component.vue'
+import DashboardPage from './components/pages/dashboard-page/dashboard-page.component.vue'
+import ListPage from './components/pages/list-page/list-page.component.vue'
 
 const router = new VueRouter({
   routes: [
@@ -20,13 +20,19 @@ const router = new VueRouter({
     },
     {
       path: '/dashboard',
-      component: DashboardPage
+      component: DashboardPage,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/list',
-      component: ListPage
+      component: ListPage,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
-});
+})
 
-export default router;
+export default router

@@ -22,7 +22,7 @@ Vue.use(VueGoogleMaps, {
   load: { 
     key: process.env.VUE_APP_GOOGLE_API_KEY,
     libraries: 'places'
-  },
+  }
 })
 
 /* eslint-disable */
