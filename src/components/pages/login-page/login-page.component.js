@@ -52,5 +52,13 @@ export default {
       /* eslint-disable */
       console.error(error);
     },
+    directives: {
+      focus: {
+        // Focuses Email/login when entering the page
+        inserted: function(el) {
+          el.firstElementChild.focus()
+        }
+      }
+    }
   }
-};
+}

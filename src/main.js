@@ -19,7 +19,7 @@ Vue.use(ElementUI)
 Vue.use(VueForm)
 // ADDED BY MALCOLM
 Vue.use(VueGoogleMaps, {
-  load: { 
+  load: {
     key: process.env.VUE_APP_GOOGLE_API_KEY,
     libraries: 'places'
   }
