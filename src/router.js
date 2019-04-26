@@ -15,15 +15,15 @@ const router = new VueRouter({
       component: LoginPage
     },
     {
-      path: '/register',
-      component: RegisterPage
-    },
-    {
       path: '/dashboard',
       component: DashboardPage,
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/register',
+      component: RegisterPage
     },
     {
       path: '/list',

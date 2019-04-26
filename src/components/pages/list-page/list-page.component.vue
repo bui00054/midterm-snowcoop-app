@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="list-view wrapper">
-        <el-card class="box-card">
+        <el-card class="map-view-card">
           <map-view v-if="addressList" v-bind:showList="true" v-bind:addressList="addressList"></map-view>
         </el-card>
       </div>

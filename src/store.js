@@ -80,7 +80,6 @@ const store = new Vuex.Store({
       return AddressService.getAddressList().then(async payload => {
         await context.commit('SET_ADDRESS_LIST', payload)
         /* eslint-disable */
-        console.log('ssss')
         return payload
       })
     },
